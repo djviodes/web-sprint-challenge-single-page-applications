@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, Route } from 'react-router-dom';
+import HomePage from './components/HomePage'
+import Form from './components/Form'
+import Confirmation from './components/Confirmation'
+import styled from 'styled-components'
+
+const StyledApp = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`
+
+const StyledNavBar = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+`
 
 const App = () => {
   return (
-    <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
-    </>
+    <StyledApp>
+      <StyledNavBar>
+        <h1>Lambda Eats</h1>
+        <div className='nav-links'>
+          <Link to='/'>Home</Link>
+          <Link to='/pizza'>Pizza</Link>
+        </div>
+      </StyledNavBar>
+      <Route path='/' component={HomePage} />
+      <Route path='/pizza' component={Form} />
+    </StyledApp>
   );
 };
 export default App;
