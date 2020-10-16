@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link, Route } from 'react-router-dom'
+import Form from './Form'
 import styled from 'styled-components'
 
 const StyledHomeWrapper = styled.div`
@@ -13,7 +15,6 @@ const StyledImage = styled.img`
 `
 
 const StyledButton = styled.button`
-    width: 10%;
     height: 5vh;
     background-color: #BC160F;
     font-size: 1.5rem;
@@ -33,7 +34,10 @@ const HomePage = () => {
                 src='http://www.napolicentrale.com.au/wp-content/uploads/2014/12/pizza-header.jpg'
                 alt='Yummy Pizza'
             />
-            <StyledButton>Pizza?</StyledButton>
+            <Link to='/pizza'>
+                <StyledButton>Pizza?</StyledButton>
+            </Link>
+            <Route path='/pizza' component={Form} />
         </StyledHomeWrapper>
     )
 }

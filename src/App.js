@@ -25,11 +25,15 @@ const App = () => {
       <StyledNavBar>
         <h1>Lambda Eats</h1>
         <div className='nav-links'>
-          <Link to='/'>Home</Link>
-          <Link to='/pizza'>Pizza</Link>
+          <Link to='/'>
+            <button>Home</button>
+          </Link>
+          <Link to='/pizza'>
+            <button>Pizza</button>
+          </Link>
         </div>
       </StyledNavBar>
-      <Route path='/' component={HomePage} />
+      <Route exact path='/' component={HomePage} />
       <Route path='/pizza' component={Form} />
     </StyledApp>
   );
