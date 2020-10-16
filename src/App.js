@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, Route } from 'react-router-dom';
 import HomePage from './components/HomePage'
 import Form from './components/Form'
-import Confirmation from './components/Confirmation'
 import styled from 'styled-components'
 
 const StyledApp = styled.div`

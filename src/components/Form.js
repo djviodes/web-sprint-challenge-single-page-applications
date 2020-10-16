@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route } from 'react-router-dom'
-import Confirmation from './Confirmation'
 import * as yup from 'yup';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -38,13 +36,8 @@ const Form = (props) => {
         formSchema.isValid(pizza).then(valid => setDisabled(!valid))
     }, [pizza])
 
-    const addPizza = (newPizza) => {
-        setPizza([...pizza, newPizza])
-      }
-
     const formSubmit = event => {
         event.preventDefault();
-        props.addPizza(pizza)
         setPizza(
             {
                 name: '',
@@ -132,12 +125,7 @@ const Form = (props) => {
                 onChange={changeHandler}
             />
 
-            <Link to='/confirmation'>
-                <button data-cy='submit' type='submit' disabled={disabled}>Order</button>
-            </Link>
-            <Route path='/confirmation' render={(props) => {
-                return <Confirmation name={props.name} size={props.size} toppings={props.toppings} instructions={props.instructions} />
-            }} />
+            <button data-cy='submit' type='submit' disabled={disabled}>Order</button>
         </StyledForm>
     )
 }
