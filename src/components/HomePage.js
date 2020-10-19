@@ -43,6 +43,10 @@ const HomePage = () => {
                 </Link>
                 <Route path='/pizza' component={Form} />
             </StyledImage>
+            <div>
+                <h2>Deals</h2>
+                
+            </div>
         </StyledHomeWrapper>
     )
 }
