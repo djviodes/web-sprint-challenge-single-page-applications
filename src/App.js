@@ -18,19 +18,39 @@ const StyledNavBar = styled.nav`
   width: 80%;
 `
 
+const StyledButtonContainer = styled.div`
+  width: 11%;
+  display: flex;
+  justify-content: space-between;
+`
+
+const StyledButton = styled.button`
+  width: 4vw;
+  height: 3vh;
+  background-color: #BC160F;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  &:hover{
+    cursor: pointer;
+    background-color: #750e09;
+    color: #cccccc;
+  }
+`
+
 const App = () => {
   return (
     <StyledApp>
       <StyledNavBar>
         <h1>Lambda Eats</h1>
-        <div className='nav-links'>
+        <StyledButtonContainer className='nav-links'>
           <Link to='/'>
-            <button>Home</button>
+            <StyledButton>Home</StyledButton>
           </Link>
           <Link to='/pizza'>
-            <button>Pizza</button>
+            <StyledButton>Order</StyledButton>
           </Link>
-        </div>
+        </StyledButtonContainer>
       </StyledNavBar>
       <Route exact path='/' component={HomePage} />
       <Route path='/pizza' component={Form} />
